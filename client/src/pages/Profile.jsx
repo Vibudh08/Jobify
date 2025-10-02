@@ -1,10 +1,9 @@
-import { FormRow , SubmitBtn} from "../components";
+import { FormRow, SubmitBtn } from "../components";
 import Wrapper from "../assets/wrappers/DashboardFormPage";
 import { useOutletContext } from "react-router-dom";
-import {Form } from "react-router-dom";
+import { Form } from "react-router-dom";
 import customFetch from "../utils/customFetch";
 import { toast } from "react-toastify";
-
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
@@ -24,27 +23,53 @@ export const action = async ({ request }) => {
   return null;
 };
 
-
 const Profile = () => {
   const { user } = useOutletContext();
   const { name, lastName, email, location } = user;
+  console.log(user);
   return (
     <Wrapper>
       <Form method="post" className="form" encType="multipart/form-data">
         <h4 className="form-title">profile</h4>
 
         <div className="form-center">
-          
-          <FormRow type="text" name="name" defaultValue={name} />
-          <FormRow
-            type="text"
-            labelText="last name"
-            name="lastName"
-            defaultValue={lastName}
-          />
-          <FormRow type="email" name="email" defaultValue={email} />
-          <FormRow type="text" name="location" defaultValue={location} />
-          <SubmitBtn formBtn/>
+          {email == "test@test.com" ? (
+            <>
+              <FormRow type="text" name="name" disabled defaultValue={name} />
+              <FormRow
+                type="text"
+                labelText="last name"
+                disabled
+                name="lastName"
+                defaultValue={lastName}
+              />
+              <FormRow
+                type="email"
+                name="email"
+                disabled
+                defaultValue={email}
+              />
+              <FormRow
+                type="text"
+                disabled
+                name="location"
+                defaultValue={location}
+              />
+            </>
+          ) : (
+            <>
+              <FormRow type="text" name="name" defaultValue={name} />
+              <FormRow
+                type="text"
+                labelText="last name"
+                name="lastName"
+                defaultValue={lastName}
+              />
+              <FormRow type="email" name="email" defaultValue={email} />
+              <FormRow type="text" name="location" defaultValue={location} />
+              <SubmitBtn formBtn />
+            </>
+          )}
         </div>
       </Form>
     </Wrapper>
