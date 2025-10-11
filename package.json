@@ -1,14 +1,17 @@
 {
   "name": "jobify",
   "version": "1.0.0",
-  "description": "[Jobify](https://jobify.live/)",
-  "main": "index.js",
+  "description": "Jobify MERN App",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "setup-project": "npm i && cd client && npm i",
-    "server": "nodemon server",
-    "client": "cd client && npm run start",
-    "start": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\""
+    "server": "node server.js",
+    "build": "cd client && npm install && npm run build",
+    "start": "node server.js",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
+    "server:dev": "nodemon server.js",
+    "client": "cd client && npm run start"
   },
   "keywords": [],
   "author": "",
