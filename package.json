@@ -6,12 +6,12 @@
   "type": "module",
   "scripts": {
     "setup-project": "npm install && cd client && npm install",
+    "postinstall": "npm install --omit=dev=false && cd client && npm install",
     "build": "cd client && npm install && npx vite build",
     "start": "node server.js",
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "server:dev": "nodemon server.js",
-    "client:dev": "cd client && npm run dev",
-    "postinstall": "cd client && npm install"
+    "client:dev": "cd client && npm run dev"
   },
   "keywords": [],
   "author": "",
