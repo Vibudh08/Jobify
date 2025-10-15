@@ -38,18 +38,19 @@ app.use(cookieParser());
 app.use(express.json());
 
 // test routes
-app.get("/", (req, res) => {
-  res.send("Hello World from Jobify backend");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello World from Jobify backend");
+// });
 
-app.get("/api/v1/test", (req, res) => {
-  res.json({ msg: "test route" });
-});
+// app.get("/api/v1/test", (req, res) => {
+//   res.json({ msg: "test route" });
+// });
 
 // api routes
 app.use("/api/v1/jobs", authenticateUser, jobRouter);
 app.use("/api/v1/users", authenticateUser, userRouter);
 app.use("/api/v1/auth", authRouter);
+console.log("NODE_ENV:", process.env.NODE_ENV);
 
 // 🧩 Serve React build in production
 if (process.env.NODE_ENV === "production") {
@@ -71,7 +72,7 @@ app.use(errorHandlerMiddleware);
 const port = process.env.PORT || 5100;
 
 try {
-  await mongoose.connect(process.env.MONGO_URI); 
+  await mongoose.connect(process.env.MONGO_URI);
   app.listen(port, () => {
     console.log(` Server running on PORT ${port}...`);
   });
