@@ -4,15 +4,15 @@
   "description": "Jobify MERN App",
   "main": "server.js",
   "type": "module",
-"scripts": {
-  "setup-project": "npm install && cd client && npm install",
-  "build": "cd client && npm install && npm run build",
-  "start": "node server.js",
-  "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
-  "server:dev": "nodemon server.js",
-  "client": "cd client && npm run dev"
-},
-
+  "scripts": {
+    "setup-project": "npm install && cd client && npm install",
+    "build": "cd client && npm install && npm run build",
+    "start": "node server.js",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
+    "server:dev": "nodemon server.js",
+    "client": "cd client && npm run dev",
+    "postinstall": "cd client && npm install"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
