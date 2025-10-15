@@ -1,4 +1,4 @@
-export { default as Logo } from "./logo.jsx";
+export { default as Logo } from "./Logo.jsx";
 export { default as FormRow } from "./FormRow";
 export { default as BigSidebar } from "./BigSidebar.jsx";
 export { default as NavBar } from "./Navbar.jsx";
