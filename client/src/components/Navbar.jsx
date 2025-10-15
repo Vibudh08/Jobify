@@ -1,6 +1,6 @@
 import Wrapper from "../assets/wrappers/Navbar"
 import {FaAlignLeft} from 'react-icons/fa'
-import Logo from "./logo"
+import Logo from "./Logo"
 import LogoutContainer from "./LogoutContainer"
 import ThemeToggle from "./themeToggle"
 
