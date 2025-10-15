@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "setup-project": "npm install && cd client && npm install",
-    "postinstall": "npm install --omit=dev=false && cd client && npm install",
+    "postinstall": "cd client && npm install",
     "build": "cd client && npm install && npx vite build",
     "start": "node server.js",
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
