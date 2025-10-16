@@ -286,15 +286,15 @@ button:disabled {
   }
 }
 
-/* .loading {
-  width: 6rem;
-  height: 6rem;
+.loading {
+  width: 4rem;
+  height: 4rem;
   border: 5px solid var(--grey-400);
   border-radius: 50%;
   border-top-color: var(--primary-500);
-  animation: spinner 0.6s linear infinite;
-} */
-.loading {
+  animation: spinner 0.6s linear infinite; 
+} 
+/* .loading {
   position: fixed;
   top: 30%;
   left: 50%;
@@ -304,7 +304,7 @@ button:disabled {
   border-radius: 50%;
   border-top-color: var(--primary-500);
   animation: spinner 0.6s linear infinite;
-}
+} */
 
 /* title */
 

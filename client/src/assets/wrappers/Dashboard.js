@@ -10,6 +10,14 @@ const Wrapper = styled.section`
     margin: 0 auto;
     padding: 2rem 0;
   }
+
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* adjust based on your navbar height */
+  }
+
   @media (min-width: 992px) {
     .dashboard {
       grid-template-columns: auto 1fr;

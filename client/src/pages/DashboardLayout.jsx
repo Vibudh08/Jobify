@@ -1,4 +1,10 @@
-import { Outlet, redirect, useLoaderData, useNavigate, useNavigation } from "react-router-dom";
+import {
+  Outlet,
+  redirect,
+  useLoaderData,
+  useNavigate,
+  useNavigation,
+} from "react-router-dom";
 import customFetch from "../utils/customFetch";
 import Wrapper from "../assets/wrappers/Dashboard";
 import { BigSidebar, NavBar, SmallSidebar, Loading } from "../components";
@@ -15,12 +21,11 @@ export const loader = async () => {
   }
 };
 
-
 const DashboardContext = createContext();
 
 const DashboardLayout = () => {
-  const {user} = useLoaderData();
-  const navigate = useNavigate()
+  const { user } = useLoaderData();
+  const navigate = useNavigate();
   const navigation = useNavigation();
   const isPageLoading = navigation.state === "loading";
   const [showSidebar, setShowSidebar] = useState(false);
@@ -36,9 +41,9 @@ const DashboardLayout = () => {
     setShowSidebar(!showSidebar);
   };
   const logoutUser = async () => {
-    navigate('/')
-    await customFetch.get('/auth/logout')
-    toast.success('Logged out')
+    navigate("/");
+    await customFetch.get("/auth/logout");
+    toast.success("Logged out");
   };
   return (
     <DashboardContext.Provider
@@ -58,7 +63,13 @@ const DashboardLayout = () => {
           <div>
             <NavBar />
             <div className="dashboard-page">
-              {isPageLoading ? <Loading /> : <Outlet context={{ user }} />}
+              {isPageLoading ? (
+                <div className="loading-container">
+                  <Loading />
+                </div>
+              ) : (
+                <Outlet context={{ user }} />
+              )}
             </div>
           </div>
         </main>
